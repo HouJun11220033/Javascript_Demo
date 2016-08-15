@@ -42,19 +42,63 @@
 
 <!-- 	} -->
 <!-- </script> -->
+<!-- <script type="text/javascript"> -->
+<!-- //新创建一个元素节点, 并把该节点添加为文档中指定节点的子节点 -->
+<!-- 	window.onload = function() { -->
+<!-- 		alert(1); -->
+<!-- 		var xmText = document.createTextNode("厦门"); -->
+<!-- 		var liNode = document.createElement("li"); -->
+
+<!-- 		liNode.appendChild(xmText); -->
+<!-- 		var cityNode = document.getElementById("city"); -->
+<!-- 		cityNode.appendChild(liNode); -->
+
+
+
+<!-- 	} -->
+<!-- </script> -->
 <script type="text/javascript">
-//新创建一个元素节点, 并把该节点添加为文档中指定节点的子节点
 	window.onload = function() {
-		alert(1);
-		var xmText = document.createTextNode("厦门");
-		var liNode = document.createElement("li");
-		
-		liNode.appendChild(xmText);
-		var cityNode = document.getElementById("city");
-		cityNode.appendChild(liNode);
+		alert("1");
+		var bjNode = document.getElementById("bj"); //拿到北京
+		var rlNode = document.getElementById("rl"); //拿到红警
+		var gameNode = document.getElementById("game");
+		//  		var gameNode = document.getElementById("game");
+		// 		gameNode.replaceChild(bjNode, rlNode);
 
 
+		// 		cityNode.replaceChild(rlNode, bjNode);
+		// 		alert(rlNode.firstChild.nodeValue);
+		// 		alert(bjNode.firstChild.nodeValue);
+		//var cityNode = document.getElementById("city");
 
+	//	gameNode.replaceChild(bjNode, rlNode);
+		replaceEach(bjNode, rlNode);
+		// 		var bjNode2 = bjNode.cloneNode(true);
+		// 		var rlNode2 = rlNode.cloneNode(true);
+		//	哈哈懂了，和我想的吃人的例子一样
+		// 		cityNode.replaceChild(rlNode, bjNode);
+		// 		gameNode.replaceChild(bjNode2, rlNode);
+		// 		alert(rlNode.firstChild.nodeValue);
+
+	// 		alert(bjNode.firstChild.nodeValue);
+	}
+	//自定义互换两个节点的函数
+	function replaceEach(aNode, bNode) {
+		//1. 获取 aNode 和 bNode 的父节点. 使用 parentNode 属性
+		var aParent = aNode.parentNode;
+		var bParent = bNode.parentNode;
+
+		if (aParent && bParent) {
+			//2. 克隆 aNode 或 bNode
+			var aNode2 = aNode.cloneNode(true);
+			var bNode2 = bNode.cloneNode(true);
+
+			//3. 分别调用 aNode 的父节点和 bNode 的父节点的 replaceChild()
+			//方法实现节点的互换
+			bParent.replaceChild(aNode2, bNode);
+			aParent.replaceChild(bNode2, aNode);
+		}
 	}
 </script>
 
