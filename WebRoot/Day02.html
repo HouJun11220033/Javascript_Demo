@@ -1,17 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Day02.html</title>
-	
-    <meta name="keywords" content="keyword1,keyword2,keyword3">
-    <meta name="description" content="this is my page">
-    <meta name="content-type" content="text/html; charset=UTF-8">
-    
-    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<head>
+<meta charset="utf-8" />
+<title>Day02.html</title>
+<script type="text/javascript">
+	window.onload = function() {
+		//	alert("helloworld");
+		var bjNode = document.getElementById("bj");
+		//	alert(bjNode.firstChild.nodeValue);
+		//得到的是一个Li节点
+		//	alert(bjNode.nodeName);
+		//	alert(bjNode.nodeType);
+		var liNodes = document.getElementsByTagName("li");
+		//alert(liNodes.length);
+		var genderNodes = document.getElementsByName("gender");
+		//	alert(genderNodes.length);
+		var bjNodes = document.getElementsByName("BeiJing");
+		//	alert(bjNodes.length);
+		//集合里面的每一个元素都有孩子
+		//	alert(bjNodes.item(0).firstChild.nodeValue);
+		
+		var cityNodes = document.getElementById("city");
+		var cityLiNodes = cityNodes.getElementsByTagName("li");
+		// 		alert(cityLiNodes.length);
+		var liChildren = cityNodes.childNodes;
+		// 		alert(liChildren.length);
+		var cityFirstChild = cityNodes.firstChild;
+		alert(cityFirstChild);
+		var bjNode = document.getElementById("bj");
+		// 		alert(bjNode.firstChild.nodeValue);
+		bjNode.firstChild.nodeValue = "尚硅谷";
+		//	var nameNode = document.getElementsByName("username")[0];
+		//	alert(nameNode.value);
+		//	nameNode.value = "尚硅谷";
+		//.................................................................
+		var nameNode = document.getElementsByName("username");
 
-  </head>
-  
-  <body>
-    This is my HTML page. <br>
-  </body>
+
+
+
+
+	}
+</script>
+
+
+</head>
+
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br> gender:
+	<input type="radio" name="gender" value="male" />Male
+	<input type="radio" name="gender" value="female" />Female
+
+	<br>
+	<br> name:
+	<input type="text" name="username" value="atguigu" />
+</body>
 </html>
