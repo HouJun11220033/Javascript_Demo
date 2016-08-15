@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Javascript DOM</title>
+		<!--<script>
+			var btn = document.getElementsByTagName("button").length;
+			alert(btn);
+		</script>-->
+		<!--<script>
+			window.onload = function(){
+				var liNodes = document.getElementsByTagName("li");
+			//	alert(liNodes.length);
+				for(var i = 0; i < liNodes.length; i++) {
+					liNodes[i].onclick = function() {
+						alert(this.firstChild.nodeValue);
+						alert("!");
+					}
+				}
+
+			}
+		</script>-->
+		<!--<script>
+			window.onload = function() {
+				var liNodes = document.getElementsByTagName("li");
+				for(var i = 0; i < liNodes.length; i++) {
+					//点击每个 li 节点, 若 li 节点的文本值没有 ^^ 开头, 加上
+					//有, 则去除
+					liNodes[i].onclick = function() {
+						var val = this.firstChild.nodeValue;
+						var reg = /^\^{3}/g;
+						if(reg.test(val)) {
+							//val = val.replace(reg,'');
+							//val=val.repeat("XXOO")
+						} else {
+							val = "^^^" + val;
+						}
+						this.firstChild.nodeValue = val;
+					}
+				}
+			}
+		</script>-->
+		<script>
+			window.onload = function() {
+				var bjNode = document.getElementById("bj");
+				//	var bjNode=document.getElementsByName("bj");
+				//1. 元素节点的这 3 个属性
+				//				alert(bjNode.nodeType);
+				//				alert(bjNode.nodeName);
+				//				alert(bjNode.nodeValue);
+				//2. 属性节点
+				//				var nameAttr = document.getElementById("name").getAttributeNode("name");
+				//				alert(nameAttr.nodeType);
+				//				alert(nameAttr.nodeName);
+				//				alert(nameAttr.nodeValue);
+				//3. 文本节点:
+				var textNode = bjNode.firstChild;
+				alert(textNode.nodeType); //文本节点: 0
+				alert(textNode.nodeName); //节点名: #text
+				alert(textNode.nodeValue); //文本节点的 nodeValue 属性值: 文本值本身. 
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		https://github.com/HouJun11220033/Javascript_Demo.git
+
+		<div id="div1">
+			<p id="p1">这是一个段落。</p>
+			<p id="p2">这是另一个段落。</p>
+		</div>
+		<!--		<button onclick="demoFunction()">点击这里</button>-->
+		<p id="demo"></p>
+
+		<!--<script>
+			//DOM节点
+			var para = document.createElement("p");
+			var nodes = document.createTextNode("这是新段落");
+			para.appendChild(nodes);
+			var element = document.getElementById("div1")
+			element.appendChild(para);
+			element.removeChild(p1);
+			var child = document.getElementById("p2");
+			child.parentNode.removeChild(child);
+			var a = "Hello World";
+			//			alert(a.length);
+			//			alert(a.toUpperCase());
+		</script>-->
+		<!--对象-->
+		<!--<script>
+			//创建直接的实例
+			person = new Object();
+			person.firstname = "Hou";
+			person.lastName = "Jun";
+			person.age = 20;
+			person.eyecolor = "bule";
+			document.write(person.firstname + " is " + person.age + " years old.");
+		</script>-->
+		<!--<script>
+			//使用对象 literals
+
+			person = {
+				firstname: "Java",
+				lastname: "Doe",
+				age: 50,
+				eyecolor: "red"
+
+			}
+			document.write("<br>");
+			document.write(person.firstname + " is " + person.age + " years old.");
+		</script>-->
+		<!--<script>
+			//使用对象构造器
+			function person(firstname, lastname, age, eyecolor)
+
+			{
+				this.firstname = firstname;
+				this.lastname = lastname;
+				this.age = age;
+				this.eyecolor = eyecolor;
+				this.changeAge = changeAge;
+
+				function changeAge(age) {
+					this.age = age;
+
+				}
+
+			}
+			var myFather = new person("Bill", "Gates", 56, "blue");
+			var myMother = new person("Steve", "Jobs", 48, "green");
+			document.write("<br>");
+			document.write(myFather.age, myMother.eyecolor);
+			document.write("<br>");
+			document.write(myFather.age = 44);
+			document.write("<br>");
+			//把方法添加到 JavaScript 对象
+			myFather.changeAge(99);
+			document.write(myFather.age);
+			//JavaScript for...in 循环
+			document.write("<br>");
+			//my.............
+			for(x in myFather) {
+				document.write(myFather[x]);
+			}
+			//ans............
+			function demoFunction() {
+				var x;
+				var txt = "";
+				for(x in myFather) {
+					txt = txt + myFather[x];
+
+				}
+				document.getElementById("demo").innerHTML = txt;
+			}
+		</script>-->
+		<!--<script>
+			//数字
+			x = 66666;
+			var str = x.toString();
+			length_x = x.length;
+			document.write("<br>");
+			document.write(x.valueOf());
+			document.write(length_x);
+			document.write(str.length);
+		</script>-->
+		<!--<script>
+			window.onload = function() {
+				//取得第一个元素的意思就是：拿到第一个button
+				var btn = document.getElementsByTagName("button")[0];
+				btn.onclick = function() {
+					//alert("Hello World !!!");
+				}
+
+			}
+		</script>-->
+		<!--容易耦合-->
+		<button onclick="alert('JDroid !!!')">ClickMe</button>
+		<!--<script>
+			window.onload = function() {
+				var bjNode = document.getElementById("bj");
+				//li是一个元素(element)
+				alert(bjNode.length);
+				var liNodes = document.getElementsByTagName("li");
+				//	alert(liNodes.length);//8
+
+				var gendersNodes_1 = document.getElementsByName("BeiJing");
+				//	alert(gendersNodes_1.length);//0
+				var gendersNodes_2 = document.getElementsByName("gender");
+				//	alert(gendersNodes_2.length);//2
+			}
+		</script>-->
+		<p>你喜欢哪个城市?</p>
+		<ul id="city">
+			<li id="bj" name="BeiJing">北京</li>
+			<li>上海</li>
+			<li>东京</li>
+			<li>首尔</li>
+		</ul>
+		<ul id="ee">
+			<li id="e">1</li>
+			<li>2</li>
+		</ul>
+
+		<br><br>
+		<p>你喜欢哪款单机游戏?</p>
+		<ul id="game">
+			<li id="rl">红警</li>
+			<li>实况</li>
+			<li>极品飞车</li>
+			<li>魔兽</li>
+		</ul>
+
+		<br><br> gender:
+		<input type="radio" name="gender" value="male" />Male
+		<input type="radio" name="gender" value="female" />Female
+
+		<!--<script>
+		//要放在函数里面！！
+		window.onload=function(){
+			var nameNode=document.getElementById("name");
+			
+			alert(nameNode);
+			//属性节点即为某一指定的元素节点的属性. 
+			var nameAttr=nameNode.getAttributeNode("value");
+			nameAttr.nodeValue="HouJun";
+			//拿到属性节点
+		//	var nameAttr=nameNode.getAttributeNode("value");
+//			alert(nameAttr);
+//			nameAttr.nodeValue="aiguigu";
+		}
+			
+			
+		</script>-->
+		<!--<script>
+			window.onload = function() {
+				var cityNode = document.getElementById("city");
+				//	alert(cityNode.childNodes.length);
+				//不能接受tr？？？
+				//var a = document.getElementById("ee");
+				//				alert(cityNode.firstChild);
+				//				alert(cityNode.lastChild);
+				var bjNode = document.getElementById("bj");
+				var biTextNode = bjNode.firstChild;
+				//先拿元素节点，在哪元素节点里面的子节点，在拿子节点里面的nodeValue
+				biTextNode.nodeValue = '侯鋆';
+
+			}
+		</script>-->
+
+		<input type="text" name="username" id="name" value="JDroid" />
+
+	</body>
+
+</html>
+<!--直到html页面加载完毕以后，才加载这段代码-->
+<!--<script>
+	var btn = document.getElementsByTagName("button").length;
+	alert(btn);
+</script>-->
