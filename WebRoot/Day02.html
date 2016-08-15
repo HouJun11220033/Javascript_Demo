@@ -3,40 +3,55 @@
 <head>
 <meta charset="utf-8" />
 <title>Day02.html</title>
+<!-- <script type="text/javascript"> -->
+<!-- 	window.onload = function() { -->
+<!-- 		//	alert("helloworld"); -->
+<!-- 		var bjNode = document.getElementById("bj"); -->
+<!-- 		//	alert(bjNode.firstChild.nodeValue); -->
+<!-- 		//得到的是一个Li节点 -->
+<!-- 		//	alert(bjNode.nodeName); -->
+<!-- 		//	alert(bjNode.nodeType); -->
+<!-- 		var liNodes = document.getElementsByTagName("li"); -->
+<!-- 		//alert(liNodes.length); -->
+<!-- 		var genderNodes = document.getElementsByName("gender"); -->
+<!-- 		//	alert(genderNodes.length); -->
+<!-- 		var bjNodes = document.getElementsByName("BeiJing"); -->
+<!-- 		//	alert(bjNodes.length); -->
+<!-- 		//集合里面的每一个元素都有孩子 -->
+<!-- 		//	alert(bjNodes.item(0).firstChild.nodeValue); -->
+
+<!-- 		var cityNodes = document.getElementById("city"); -->
+<!-- 		var cityLiNodes = cityNodes.getElementsByTagName("li"); -->
+<!-- 		// 		alert(cityLiNodes.length); -->
+<!-- 		var liChildren = cityNodes.childNodes; -->
+<!-- 		// 		alert(liChildren.length); -->
+<!-- 		var cityFirstChild = cityNodes.firstChild; -->
+<!-- 		alert(cityFirstChild); -->
+<!-- 		var bjNode = document.getElementById("bj"); -->
+<!-- 		// 		alert(bjNode.firstChild.nodeValue); -->
+<!-- 		bjNode.firstChild.nodeValue = "尚硅谷"; -->
+<!-- 		//	var nameNode = document.getElementsByName("username")[0]; -->
+<!-- 		//	alert(nameNode.value); -->
+<!-- 		//	nameNode.value = "尚硅谷"; -->
+<!-- 		//................................................................. -->
+<!-- 		var nameNode = document.getElementsByName("username"); -->
+
+
+
+
+
+<!-- 	} -->
+<!-- </script> -->
 <script type="text/javascript">
+//新创建一个元素节点, 并把该节点添加为文档中指定节点的子节点
 	window.onload = function() {
-		//	alert("helloworld");
-		var bjNode = document.getElementById("bj");
-		//	alert(bjNode.firstChild.nodeValue);
-		//得到的是一个Li节点
-		//	alert(bjNode.nodeName);
-		//	alert(bjNode.nodeType);
-		var liNodes = document.getElementsByTagName("li");
-		//alert(liNodes.length);
-		var genderNodes = document.getElementsByName("gender");
-		//	alert(genderNodes.length);
-		var bjNodes = document.getElementsByName("BeiJing");
-		//	alert(bjNodes.length);
-		//集合里面的每一个元素都有孩子
-		//	alert(bjNodes.item(0).firstChild.nodeValue);
+		alert(1);
+		var xmText = document.createTextNode("厦门");
+		var liNode = document.createElement("li");
 		
-		var cityNodes = document.getElementById("city");
-		var cityLiNodes = cityNodes.getElementsByTagName("li");
-		// 		alert(cityLiNodes.length);
-		var liChildren = cityNodes.childNodes;
-		// 		alert(liChildren.length);
-		var cityFirstChild = cityNodes.firstChild;
-		alert(cityFirstChild);
-		var bjNode = document.getElementById("bj");
-		// 		alert(bjNode.firstChild.nodeValue);
-		bjNode.firstChild.nodeValue = "尚硅谷";
-		//	var nameNode = document.getElementsByName("username")[0];
-		//	alert(nameNode.value);
-		//	nameNode.value = "尚硅谷";
-		//.................................................................
-		var nameNode = document.getElementsByName("username");
-
-
+		liNode.appendChild(xmText);
+		var cityNode = document.getElementById("city");
+		cityNode.appendChild(liNode);
 
 
 
