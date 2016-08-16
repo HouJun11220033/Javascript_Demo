@@ -63,25 +63,25 @@
 		var bjNode = document.getElementById("bj"); //拿到北京
 		var rlNode = document.getElementById("rl"); //拿到红警
 		var gameNode = document.getElementById("game");
-		//  		var gameNode = document.getElementById("game");
+		// 		 		var gameNode = document.getElementById("game");
+		// 				gameNode.replaceChild(bjNode, rlNode);
+
+
+		// 				cityNode.replaceChild(rlNode, bjNode);
+		// 				alert(rlNode.firstChild.nodeValue);
+		// 				alert(bjNode.firstChild.nodeValue);
+		// 		var cityNode = document.getElementById("city");
+
 		// 		gameNode.replaceChild(bjNode, rlNode);
-
-
-		// 		cityNode.replaceChild(rlNode, bjNode);
-		// 		alert(rlNode.firstChild.nodeValue);
-		// 		alert(bjNode.firstChild.nodeValue);
-		//var cityNode = document.getElementById("city");
-
-	//	gameNode.replaceChild(bjNode, rlNode);
 		replaceEach(bjNode, rlNode);
-		// 		var bjNode2 = bjNode.cloneNode(true);
-		// 		var rlNode2 = rlNode.cloneNode(true);
-		//	哈哈懂了，和我想的吃人的例子一样
-		// 		cityNode.replaceChild(rlNode, bjNode);
-		// 		gameNode.replaceChild(bjNode2, rlNode);
-		// 		alert(rlNode.firstChild.nodeValue);
+		// 				var bjNode2 = bjNode.cloneNode(true);
+		// 				var rlNode2 = rlNode.cloneNode(true);
+		// 			哈哈懂了，和我想的吃人的例子一样
+		// 				cityNode.replaceChild(rlNode, bjNode);
+		// 				gameNode.replaceChild(bjNode2, rlNode);
+		// 				alert(rlNode.firstChild.nodeValue);
 
-	// 		alert(bjNode.firstChild.nodeValue);
+	// 			alert(bjNode.firstChild.nodeValue);
 	}
 	//自定义互换两个节点的函数
 	function replaceEach(aNode, bNode) {
